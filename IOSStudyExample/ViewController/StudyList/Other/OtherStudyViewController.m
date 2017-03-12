@@ -22,7 +22,7 @@
     [super viewDidLoad];
     self.title = @"OtherStudy";
     
-    self.classNameList = @[@"PickerViewController",@"ScanViewController",@"QRCreateViewController"];
+    self.classNameList = @[@"PickerViewController",@"ScanViewController",@"QRCreateViewController",@"RuntimeViewController"];
     
     [self setupTableView];
 }

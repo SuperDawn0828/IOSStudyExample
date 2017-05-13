@@ -13,7 +13,7 @@
 @interface ScanView : UIView
 @property (nonatomic,assign) id <ScanViewDelegate> delegate;
 
-- (void)createScanLineAnimation;
+//- (void)createScanLineAnimation;
 
 @end
 

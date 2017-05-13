@@ -42,6 +42,7 @@
 		E2359B1F1E67F68D002D71C2 /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2359B1E1E67F68D002D71C2 /* RuntimeViewController.m */; };
 		E2359B221E67F706002D71C2 /* RuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2359B211E67F706002D71C2 /* RuntimeModel.m */; };
 		E2359B251E680FA8002D71C2 /* NSObject+Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = E2359B241E680FA8002D71C2 /* NSObject+Encode.m */; };
+		E2AA47121E8F389000FCB205 /* ScanQRAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AA47111E8F389000FCB205 /* ScanQRAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,8 @@
 		E2359B211E67F706002D71C2 /* RuntimeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeModel.m; sourceTree = "<group>"; };
 		E2359B231E680FA8002D71C2 /* NSObject+Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Encode.h"; sourceTree = "<group>"; };
 		E2359B241E680FA8002D71C2 /* NSObject+Encode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Encode.m"; sourceTree = "<group>"; };
+		E2AA47101E8F389000FCB205 /* ScanQRAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRAlertView.h; sourceTree = "<group>"; };
+		E2AA47111E8F389000FCB205 /* ScanQRAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRAlertView.m; sourceTree = "<group>"; };
 		E8077E474712AF30A3186A6A /* libPods-IOSStudyExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IOSStudyExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -207,6 +210,8 @@
 				04618A6D1DAB8E4100E3DA3E /* ScanView.m */,
 				040D24721DAE3AFC00B859F9 /* ScanningQRCodeManager.h */,
 				040D24731DAE3AFC00B859F9 /* ScanningQRCodeManager.m */,
+				E2AA47101E8F389000FCB205 /* ScanQRAlertView.h */,
+				E2AA47111E8F389000FCB205 /* ScanQRAlertView.m */,
 			);
 			path = Scan;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 		047C02A91D76BD2F001C84E6 /* IOSStudyExample */ = {
 			isa = PBXGroup;
 			children = (
+				E258415D1E9512B7003C1E06 /* Transition */,
 				040EAB2D1D7FC0DE00CD102B /* Library */,
 				047C02EC1D77B713001C84E6 /* Util */,
 				047C02E01D76CA49001C84E6 /* VIew */,
@@ -414,6 +420,13 @@
 				E8077E474712AF30A3186A6A /* libPods-IOSStudyExample.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E258415D1E9512B7003C1E06 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,6 +639,7 @@
 				04F931A31D9E04630083CAEC /* GCDCreateViewController.m in Sources */,
 				E2359B251E680FA8002D71C2 /* NSObject+Encode.m in Sources */,
 				040EAB281D7EB56700CD102B /* PickerViewController.m in Sources */,
+				E2AA47121E8F389000FCB205 /* ScanQRAlertView.m in Sources */,
 				047C02AC1D76BD2F001C84E6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

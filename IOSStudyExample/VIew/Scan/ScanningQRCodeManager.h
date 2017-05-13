@@ -11,7 +11,7 @@
 @protocol ScanningQRCodeDelegate;
 
 @interface ScanningQRCodeManager : NSObject
-@property (nonatomic,assign) id <ScanningQRCodeDelegate> delegate;
+@property (nonatomic,weak) id <ScanningQRCodeDelegate> delegate;
 
 + (instancetype)scanningQRCode;
 
@@ -19,6 +19,7 @@
 - (void)scanningQRCodeOutsideViewLayer:(CALayer *)layer;
 
 - (void)stopScanning;
+- (void)startScanning;
 - (void)removePreviewLayer;
 - (void)scanningOnTorch:(BOOL)on;
 

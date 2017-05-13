@@ -8,6 +8,7 @@
 
 #import "OtherStudyViewController.h"
 #import "DefaultTableViewCell.h"
+#import "ScanQRAlertView.h"
 
 @interface OtherStudyViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
@@ -64,9 +65,28 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *className = self.classNameList[indexPath.row];
-    UIViewController *viewController = (UIViewController *)[[NSClassFromString(className) alloc]init];
-    [self.navigationController pushViewController:viewController animated:YES];
+//    NSString *className = self.classNameList[indexPath.row];
+//    if ([className isEqualToString:@"ScanViewController"]) {
+//        UIViewController *viewController = (UIViewController *)[[NSClassFromString(className) alloc]init];
+//        UINavigationController *presentNav = [[UINavigationController alloc] initWithRootViewController:viewController];
+//        UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+//        [rootVC presentViewController:presentNav animated:YES completion:nil];
+//    }
+//    else {
+//        UIViewController *viewController = (UIViewController *)[[NSClassFromString(className) alloc]init];
+//        [self.navigationController pushViewController:viewController animated:YES];
+//    }
+    ScanQRAlertAction *cancelAtion = [ScanQRAlertAction actionWithTitle:@"" actionHandler:^(NSString *string) {
+        
+    }];
+    
+    ScanQRAlertAction *certainAction = [ScanQRAlertAction actionWithTitle:@"" actionHandler:^(NSString *string) {
+        
+    }];
+    
+    ScanQRAlertView *alertView = [ScanQRAlertView scanQRAlertDetail:@"dkjflksdjflkajdfklajdfkljdlkf" actionHandlers:@[cancelAtion,certainAction]];
+    [alertView show];
+    
 }
 
 @end

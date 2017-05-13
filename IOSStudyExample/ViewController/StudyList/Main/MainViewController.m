@@ -36,6 +36,8 @@
     self.classNameList = @[@"LayerStudyViewController",@"GCDStudyViewController",@"OtherStudyViewController"];
     
     [self.view addSubview:self.tableView];
+    
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

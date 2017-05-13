@@ -74,11 +74,14 @@
     // 7、实例化预览图层, 传递_session是为了告诉图层将来显示什么内容
     self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.session];
     self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    self.previewLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - NAVIGATION_STATUS_HEIGHT);
+    
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    self.previewLayer.frame = CGRectMake(0, 0, width, height);
     // 8、将图层插入当前视图
     [layer insertSublayer:self.previewLayer atIndex:0];
     // 9、启动会话
-    [self.session startRunning];
+    [self startScanning];
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
@@ -116,6 +119,11 @@
     else {
         
     }
+}
+
+- (void)startScanning
+{
+    [self.session startRunning];
 }
 
 - (void)stopScanning

@@ -59,7 +59,7 @@
 - (void)sliderValueChange:(UISlider *)sender
 {
     NSLog(@"%.2f",sender.value);
-    [self.progressView setProgressValue:sender.value animated:NO];
+    [self.progressView setProgressValue:sender.value animated:YES];
 }
 
 

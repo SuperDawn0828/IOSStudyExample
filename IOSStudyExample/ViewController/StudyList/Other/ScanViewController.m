@@ -11,6 +11,8 @@
 #import "ScanView.h"
 #import "ScanningQRCodeManager.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @interface ScanViewController ()<AVCaptureMetadataOutputObjectsDelegate,ScanViewDelegate,ScanningQRCodeDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic,strong) AVCaptureSession *session;
 @property (nonatomic,strong) AVCaptureVideoPreviewLayer *previewLayer;
@@ -23,19 +25,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"扫描";
     [self setupSubViews];
     [self setupScanningQRCode];
     [self.scanQRCode scanningQRCodeOutsideViewLayer:self.view.layer];
-    
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"相册" style:UIBarButtonItemStyleDone target:self action:@selector(openAlbumAction)];
-    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.scanView createScanLineAnimation];
+    
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    self.tabBarController.tabBar.hidden = NO;
+    [self.navigationController.navigationBar setBarTintColor:UIColorFromRGB(0x444a59)];
+    
+    UIImage *backImage = [[UIImage imageNamed:@"back-2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIButton *clickButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [clickButton setBackgroundImage:backImage forState:UIControlStateNormal];
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:clickButton];
+    self.navigationController.navigationItem.leftBarButtonItem = buttonItem;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -81,7 +88,9 @@
 
 - (void)setupSubViews
 {
-    self.scanView = [[ScanView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - NAVIGATION_STATUS_HEIGHT)];
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    self.scanView = [[ScanView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
     self.scanView.delegate = self;
     [self.view addSubview:self.scanView];
 }
@@ -99,7 +108,32 @@
 
 - (void)scanningQRCode:(ScanningQRCodeManager *)scanningQRCode completedScanningOutput:(NSDictionary *)outputDictionary
 {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:outputDictionary[@"type"] message:outputDictionary[@"stringValue"] preferredStyle:UIAlertControllerStyleAlert];
+    
+    __weak typeof(self) weakSelf = self;
+    UIAlertAction *certainAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (weakSelf.scanQrCodeResult) {
+            weakSelf.scanQrCodeResult(outputDictionary[@"stringValue"]);
+        }
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action){
+        [weakSelf.scanQRCode startScanning];
+    }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:certainAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
     NSLog(@"outputDictionary:%@",outputDictionary);
+}
+
+- (void)backAction
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

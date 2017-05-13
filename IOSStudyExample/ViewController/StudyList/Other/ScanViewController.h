@@ -8,6 +8,9 @@
 
 #import "BaseViewController.h"
 
-@interface ScanViewController : BaseViewController
+typedef void(^CallBackBlock)(NSString *string);
+
+@interface ScanViewController : UIViewController
+@property (nonatomic,copy) CallBackBlock scanQrCodeResult;
 
 @end

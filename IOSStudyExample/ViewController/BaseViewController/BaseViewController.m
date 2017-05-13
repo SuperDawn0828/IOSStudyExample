@@ -32,6 +32,8 @@
 {
     [super viewWillAppear:animated];
     
+    NSLog(@"navigationDeleage: %@", self.navigationController.interactivePopGestureRecognizer.delegate);
+    
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setTranslucent:NO];
     

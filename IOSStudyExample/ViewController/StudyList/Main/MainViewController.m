@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "DefaultTableViewCell.h"
+#import "NotificationName.h"
 
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
@@ -34,6 +35,9 @@
     self.title = @"Study";
     
     self.classNameList = @[@"LayerStudyViewController",@"GCDStudyViewController",@"OtherStudyViewController"];
+
+    NSLog(@"%@", FooDidBecomeBarNotification);
+    
     
     [self.view addSubview:self.tableView];
     

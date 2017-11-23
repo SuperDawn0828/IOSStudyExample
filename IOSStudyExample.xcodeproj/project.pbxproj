@@ -43,6 +43,9 @@
 		E2359B221E67F706002D71C2 /* RuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2359B211E67F706002D71C2 /* RuntimeModel.m */; };
 		E2359B251E680FA8002D71C2 /* NSObject+Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = E2359B241E680FA8002D71C2 /* NSObject+Encode.m */; };
 		E2AA47121E8F389000FCB205 /* ScanQRAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AA47111E8F389000FCB205 /* ScanQRAlertView.m */; };
+		E2D6373B1F3ABF8700813525 /* NotificationName.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D6373A1F3ABF8700813525 /* NotificationName.m */; };
+		E2D6373E1F3AEC6900813525 /* LMWeakObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D6373D1F3AEC6900813525 /* LMWeakObject.m */; };
+		E2D637411F3AF3F500813525 /* LMGeneralService.m in Sources */ = {isa = PBXBuildFile; fileRef = E2D637401F3AF3F500813525 /* LMGeneralService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +139,13 @@
 		E2359B241E680FA8002D71C2 /* NSObject+Encode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Encode.m"; sourceTree = "<group>"; };
 		E2AA47101E8F389000FCB205 /* ScanQRAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRAlertView.h; sourceTree = "<group>"; };
 		E2AA47111E8F389000FCB205 /* ScanQRAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRAlertView.m; sourceTree = "<group>"; };
+		E2D637381F3ABDBF00813525 /* LMPlayerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlayerProtocol.h; sourceTree = "<group>"; };
+		E2D637391F3ABF8700813525 /* NotificationName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationName.h; sourceTree = "<group>"; };
+		E2D6373A1F3ABF8700813525 /* NotificationName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationName.m; sourceTree = "<group>"; };
+		E2D6373C1F3AEC6900813525 /* LMWeakObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMWeakObject.h; sourceTree = "<group>"; };
+		E2D6373D1F3AEC6900813525 /* LMWeakObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMWeakObject.m; sourceTree = "<group>"; };
+		E2D6373F1F3AF3F500813525 /* LMGeneralService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMGeneralService.h; sourceTree = "<group>"; };
+		E2D637401F3AF3F500813525 /* LMGeneralService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMGeneralService.m; sourceTree = "<group>"; };
 		E8077E474712AF30A3186A6A /* libPods-IOSStudyExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IOSStudyExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -392,6 +402,13 @@
 				047C02EF1D77C189001C84E6 /* ColorHelper.m */,
 				046835B51D795DFD00F9AB4B /* GCDTimer.h */,
 				046835B61D795DFD00F9AB4B /* GCDTimer.m */,
+				E2D637391F3ABF8700813525 /* NotificationName.h */,
+				E2D6373A1F3ABF8700813525 /* NotificationName.m */,
+				E2D637381F3ABDBF00813525 /* LMPlayerProtocol.h */,
+				E2D6373C1F3AEC6900813525 /* LMWeakObject.h */,
+				E2D6373D1F3AEC6900813525 /* LMWeakObject.m */,
+				E2D6373F1F3AF3F500813525 /* LMGeneralService.h */,
+				E2D637401F3AF3F500813525 /* LMGeneralService.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -627,12 +644,15 @@
 				047C02FD1D77FF5D001C84E6 /* ProgressView.m in Sources */,
 				E2359B221E67F706002D71C2 /* RuntimeModel.m in Sources */,
 				047C02F01D77C189001C84E6 /* ColorHelper.m in Sources */,
+				E2D6373E1F3AEC6900813525 /* LMWeakObject.m in Sources */,
 				040EAB251D7EB3CB00CD102B /* OtherStudyViewController.m in Sources */,
 				040D24741DAE3AFC00B859F9 /* ScanningQRCodeManager.m in Sources */,
 				046835B41D795DDE00F9AB4B /* GCDTimerViewController.m in Sources */,
 				047C02E81D76CE13001C84E6 /* DefaultTableViewCell.m in Sources */,
 				046835B01D795D9D00F9AB4B /* ProgressViewController.m in Sources */,
+				E2D637411F3AF3F500813525 /* LMGeneralService.m in Sources */,
 				047C02E51D76CA7D001C84E6 /* BaseViewController.m in Sources */,
+				E2D6373B1F3ABF8700813525 /* NotificationName.m in Sources */,
 				047C02F31D77C439001C84E6 /* Util.m in Sources */,
 				046835AF1D795D9D00F9AB4B /* LayerStudyViewController.m in Sources */,
 				04618A6E1DAB8E4100E3DA3E /* ScanView.m in Sources */,

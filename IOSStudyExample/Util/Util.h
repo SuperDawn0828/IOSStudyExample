@@ -21,4 +21,6 @@
 
 + (NSTimeInterval)getDateTimeIntervalWithDate:(NSString *)dateStr format:(NSString *)format;
 
+extern NSString * const UtilString;
+
 @end
